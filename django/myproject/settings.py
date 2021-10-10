@@ -55,6 +55,19 @@ INSTALLED_APPS = [
     'rest_framework',
     # Include this to build on top of Boostrap 4
     'bootstrap4',
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail.core',
+    'modelcluster',
+    'taggit',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +78,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
 ROOT_URLCONF = 'myproject.urls'
@@ -144,6 +158,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/static/'
+
+MEDIA_ROOT = '/media/'
+MEDIA_URL = '/media/'
+
+WAGTAIL_SITE_NAME = env("WAGTAIL_SITE_NAME")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
